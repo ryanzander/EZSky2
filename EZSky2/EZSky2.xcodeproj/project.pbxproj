@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		78A656C72233BBA700DBC25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656C62233BBA700DBC25C /* AppDelegate.swift */; };
-		78A656C92233BBA700DBC25C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656C82233BBA700DBC25C /* ViewController.swift */; };
 		78A656CC2233BBA700DBC25C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A656CA2233BBA700DBC25C /* Main.storyboard */; };
 		78A656CE2233BBA800DBC25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A656CD2233BBA800DBC25C /* Assets.xcassets */; };
 		78A656D12233BBA800DBC25C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A656CF2233BBA800DBC25C /* LaunchScreen.storyboard */; };
 		78A656DC2233BBA800DBC25C /* EZSky2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656DB2233BBA800DBC25C /* EZSky2Tests.swift */; };
+		78A656EE2233BD7000DBC25C /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656ED2233BD7000DBC25C /* WeatherVC.swift */; };
+		78A656F02233BDE100DBC25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656EF2233BDE100DBC25C /* Constants.swift */; };
+		78A656F22233BE6100DBC25C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656F12233BE6100DBC25C /* Date+Extensions.swift */; };
+		78A656F42233BF6000DBC25C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656F32233BF6000DBC25C /* NetworkService.swift */; };
+		78A656F62233BFDE00DBC25C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656F52233BFDE00DBC25C /* LocationService.swift */; };
+		78A656F82233C02700DBC25C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656F72233C02700DBC25C /* Weather.swift */; };
+		78A656FA2233C03800DBC25C /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656F92233C03800DBC25C /* Forecast.swift */; };
+		78A656FC2233C09000DBC25C /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656FB2233C09000DBC25C /* ForecastCell.swift */; };
+		78A656FE2233C0E800DBC25C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656FD2233C0E800DBC25C /* WeatherView.swift */; };
+		78A657002233C11200DBC25C /* ForecastVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A656FF2233C11200DBC25C /* ForecastVM.swift */; };
+		78A657022233C12400DBC25C /* WeatherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A657012233C12400DBC25C /* WeatherVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +38,6 @@
 /* Begin PBXFileReference section */
 		78A656C32233BBA700DBC25C /* EZSky2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZSky2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A656C62233BBA700DBC25C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78A656C82233BBA700DBC25C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78A656CB2233BBA700DBC25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78A656CD2233BBA800DBC25C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78A656D02233BBA800DBC25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +45,17 @@
 		78A656D72233BBA800DBC25C /* EZSky2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZSky2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A656DB2233BBA800DBC25C /* EZSky2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZSky2Tests.swift; sourceTree = "<group>"; };
 		78A656DD2233BBA800DBC25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78A656ED2233BD7000DBC25C /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		78A656EF2233BDE100DBC25C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		78A656F12233BE6100DBC25C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		78A656F32233BF6000DBC25C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		78A656F52233BFDE00DBC25C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		78A656F72233C02700DBC25C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		78A656F92233C03800DBC25C /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		78A656FB2233C09000DBC25C /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		78A656FD2233C0E800DBC25C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		78A656FF2233C11200DBC25C /* ForecastVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastVM.swift; sourceTree = "<group>"; };
+		78A657012233C12400DBC25C /* WeatherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +97,18 @@
 		78A656C52233BBA700DBC25C /* EZSky2 */ = {
 			isa = PBXGroup;
 			children = (
+				78A656E62233BCA100DBC25C /* Model */,
+				78A656E92233BCBE00DBC25C /* ViewModel */,
+				78A656E72233BCAF00DBC25C /* View */,
+				78A656E82233BCB600DBC25C /* Controller */,
+				78A656EA2233BCC900DBC25C /* Extensions */,
+				78A656EB2233BCD500DBC25C /* Service */,
+				78A656EC2233BCF800DBC25C /* Resources */,
 				78A656C62233BBA700DBC25C /* AppDelegate.swift */,
-				78A656C82233BBA700DBC25C /* ViewController.swift */,
-				78A656CA2233BBA700DBC25C /* Main.storyboard */,
 				78A656CD2233BBA800DBC25C /* Assets.xcassets */,
-				78A656CF2233BBA800DBC25C /* LaunchScreen.storyboard */,
 				78A656D22233BBA800DBC25C /* Info.plist */,
+				78A656CF2233BBA800DBC25C /* LaunchScreen.storyboard */,
+				78A656CA2233BBA700DBC25C /* Main.storyboard */,
 			);
 			path = EZSky2;
 			sourceTree = "<group>";
@@ -94,6 +120,66 @@
 				78A656DD2233BBA800DBC25C /* Info.plist */,
 			);
 			path = EZSky2Tests;
+			sourceTree = "<group>";
+		};
+		78A656E62233BCA100DBC25C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78A656F72233C02700DBC25C /* Weather.swift */,
+				78A656F92233C03800DBC25C /* Forecast.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78A656E72233BCAF00DBC25C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78A656FB2233C09000DBC25C /* ForecastCell.swift */,
+				78A656FD2233C0E800DBC25C /* WeatherView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78A656E82233BCB600DBC25C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78A656ED2233BD7000DBC25C /* WeatherVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78A656E92233BCBE00DBC25C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				78A656FF2233C11200DBC25C /* ForecastVM.swift */,
+				78A657012233C12400DBC25C /* WeatherVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		78A656EA2233BCC900DBC25C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78A656F12233BE6100DBC25C /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		78A656EB2233BCD500DBC25C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				78A656F32233BF6000DBC25C /* NetworkService.swift */,
+				78A656F52233BFDE00DBC25C /* LocationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		78A656EC2233BCF800DBC25C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78A656EF2233BDE100DBC25C /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A656C92233BBA700DBC25C /* ViewController.swift in Sources */,
+				78A656FA2233C03800DBC25C /* Forecast.swift in Sources */,
+				78A657002233C11200DBC25C /* ForecastVM.swift in Sources */,
+				78A656F42233BF6000DBC25C /* NetworkService.swift in Sources */,
 				78A656C72233BBA700DBC25C /* AppDelegate.swift in Sources */,
+				78A656F22233BE6100DBC25C /* Date+Extensions.swift in Sources */,
+				78A657022233C12400DBC25C /* WeatherVM.swift in Sources */,
+				78A656FC2233C09000DBC25C /* ForecastCell.swift in Sources */,
+				78A656FE2233C0E800DBC25C /* WeatherView.swift in Sources */,
+				78A656F82233C02700DBC25C /* Weather.swift in Sources */,
+				78A656EE2233BD7000DBC25C /* WeatherVC.swift in Sources */,
+				78A656F62233BFDE00DBC25C /* LocationService.swift in Sources */,
+				78A656F02233BDE100DBC25C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nagarajarivers.EZSky2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nagarajarivers.EZSky2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
