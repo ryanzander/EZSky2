@@ -11,7 +11,7 @@ import CoreLocation
 
 class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
-    @IBOutlet weak var weatherView: UIView!
+    @IBOutlet weak var weatherView: WeatherView!
     
     let location = Location.shared
     let networkService = NetworkService.shared
@@ -29,9 +29,6 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             location.latitude = currentLocation.coordinate.latitude
             location.longitude = currentLocation.coordinate.longitude
             
-            print("Lat: \(location.latitude!)")
-            print("Lon: \(location.longitude!)")
-            
             getData()
         }
     }
@@ -40,6 +37,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupWeatherView()
         setupLocationManager()
     }
     
@@ -47,7 +45,11 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         super.viewWillAppear(animated)
     }
     
-    func getData() {
+    func setupWeatherView() {
+        weatherView.isHidden = true
+    }
+    
+    private func getData() {
     
         networkService.getWeather { (weather, error) in
             if let error = error {
@@ -55,13 +57,15 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 return
             }
             
-            print("we got the weather")
-            
             guard let weather = weather else { return }
+            print("we got the weather")
             self.weatherVM = WeatherVM(weather: weather)
+            self.weatherView.weatherVM = self.weatherVM
             
-            print(weather)
-            
+            // update UI on main thread
+            DispatchQueue.main.async {
+                self.weatherView.isHidden = false
+            }
         }
     }
     
@@ -110,14 +114,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
 
     
     // MARK: - TableView
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell", for: indexPath) as? ForecastCell {
             

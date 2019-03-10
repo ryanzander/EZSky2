@@ -13,7 +13,7 @@ class NetworkService: NSObject {
     static let shared = NetworkService()
 
     func getWeather(completion: @escaping (Weather?, Error?) -> ()) {
-        //let urlString = "https://api.letsbuildthatapp.com/jsondecodable/courses"
+        
         guard let url = URL(string: WEATHER_URL) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             // handle error
@@ -31,7 +31,6 @@ class NetworkService: NSObject {
                     print("error trying to convert data to JSON")
                     return
                 }
-                print(dic)
                 
                 var weatherType = ""
                 var weatherDetails = ""

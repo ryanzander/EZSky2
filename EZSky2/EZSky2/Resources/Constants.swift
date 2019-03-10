@@ -14,7 +14,6 @@ let LON = "&lon="
 let APP_ID = "&appid="
 let API_KEY = "e853861efe7b26eed77d7cc7d36ba1d8"
 
-// the latitude and longitude properties of our Location singleton are accessed here to create URLs specific to our current geographical location.
+// the latitude and longitude properties of our Location singleton are accessed here to create URLs specific to our current location.
 let WEATHER_URL = "\(BASE_URL)weather?\(LAT)\(Location.shared.latitude!)\(LON)\(Location.shared.longitude!)\(APP_ID)\(API_KEY)"
-
 let FORECAST_URL = "\(BASE_URL)forecast/daily?\(LAT)\(Location.shared.latitude!)\(LON)\(Location.shared.longitude!)\(APP_ID)\(API_KEY)"

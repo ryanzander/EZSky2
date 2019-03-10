@@ -24,8 +24,28 @@ struct WeatherVM {
         self.date = weather.date
         self.weatherType = weather.weatherType
         self.weatherDetails = weather.weatherDetails
-        self.icon = weather.icon
         self.currentTemp = String(weather.currentTemp)
+        
+        // weather api returns coded icon names, so we match these with our weather images
+        var imageName = ""
+        switch weather.icon {
+            
+        case "03d", "03n", "04d", "04n", "50d", "50n":
+            imageName = "Cloudy"
+        case "01d", "01n":
+            imageName = "Sunny"
+        case "11d", "11n":
+            imageName = "Lightning"
+        case "02d", "02n":
+            imageName = "Partially Cloudy"
+        case "13d", "13n":
+            imageName = "Snow"
+        case "09d", "09n", "10d", "10n":
+            imageName = "Rainy"
+        default:
+            imageName = "Partially Cloudy"
+        }
+        self.icon = imageName
     }
     
 }

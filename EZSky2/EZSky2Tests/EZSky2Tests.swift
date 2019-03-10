@@ -10,25 +10,46 @@ import XCTest
 @testable import EZSky2
 
 class EZSky2Tests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testStringCapitalizing() {
+        
+        let string = "it is clear"
+        XCTAssertEqual(string.capitalizingFirstLetter(), "It is clear")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWeatherVM() {
+      
+        // init mock WeatherViewModels from weather models
+        let weather1 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "03d", currentTemp: 10)
+        let weather2 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "01d", currentTemp: 10)
+        let weather3 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "11d", currentTemp: 10)
+        let weather4 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "02d", currentTemp: 10)
+        let weather5 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "13d", currentTemp: 10)
+        let weather6 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "09d", currentTemp: 10)
+        let weather7 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "xxx", currentTemp: 10)
+        let weatherVM1 = WeatherVM(weather: weather1)
+        let weatherVM2 = WeatherVM(weather: weather2)
+        let weatherVM3 = WeatherVM(weather: weather3)
+        let weatherVM4 = WeatherVM(weather: weather4)
+        let weatherVM5 = WeatherVM(weather: weather5)
+        let weatherVM6 = WeatherVM(weather: weather6)
+        let weatherVM7 = WeatherVM(weather: weather7)
+        
+        // strings
+        XCTAssertEqual(weather1.cityName, weatherVM1.cityName)
+        XCTAssertEqual(weather1.weatherType, weatherVM1.weatherType)
+        XCTAssertEqual(weather1.weatherDetails, weatherVM1.weatherDetails)
+        XCTAssertEqual("\(weather1.currentTemp)", weatherVM1.currentTemp)
+        
+        // icon names
+        XCTAssertEqual(weatherVM1.icon, "Cloudy")
+        XCTAssertEqual(weatherVM2.icon, "Sunny")
+        XCTAssertEqual(weatherVM3.icon, "Lightning")
+        XCTAssertEqual(weatherVM4.icon, "Partially Cloudy")
+        XCTAssertEqual(weatherVM5.icon, "Snow")
+        XCTAssertEqual(weatherVM6.icon, "Rainy")
+        // default
+        XCTAssertEqual(weatherVM7.icon, "Partially Cloudy")
     }
 
 }
