@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+struct WeatherVM {
+    
+    let cityName: String
+    let date: String
+    let weatherType: String
+    let weatherDetails: String
+    let icon: String
+    let currentTemp: String
+    
+    // dependency injection
+    init(weather: Weather) {
+        
+        self.cityName = weather.cityName
+        self.date = weather.date
+        self.weatherType = weather.weatherType
+        self.weatherDetails = weather.weatherDetails
+        self.icon = weather.icon
+        self.currentTemp = String(weather.currentTemp)
+    }
+    
+}
