@@ -46,10 +46,6 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         setupLocationManager()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     
     private func setupWeatherView() {
         weatherView.isHidden = true
