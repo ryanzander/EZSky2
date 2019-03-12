@@ -39,7 +39,7 @@ class EZSky2Tests: XCTestCase {
         XCTAssertEqual(weather1.cityName, weatherVM1.cityName)
         XCTAssertEqual(weather1.weatherType, weatherVM1.weatherType)
         XCTAssertEqual(weather1.weatherDetails, weatherVM1.weatherDetails)
-        XCTAssertEqual("\(weather1.currentTemp)", weatherVM1.currentTemp)
+        XCTAssertEqual("\(weather1.currentTemp)°", weatherVM1.currentTemp)
         
         // icon names
         XCTAssertEqual(weatherVM1.icon, "Cloudy")
@@ -51,5 +51,6 @@ class EZSky2Tests: XCTestCase {
         // default
         XCTAssertEqual(weatherVM7.icon, "Partially Cloudy")
     }
+
 
 }

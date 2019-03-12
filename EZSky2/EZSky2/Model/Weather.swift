@@ -9,12 +9,13 @@
 import Foundation
 
 struct Weather {
-    var cityName: String
-    var date: String
-    var weatherType: String
-    var weatherDetails: String
-    var icon: String
-    var currentTemp: Int
+    
+    let cityName: String
+    let date: String
+    let weatherType: String
+    let weatherDetails: String
+    let icon: String
+    let currentTemp: Int
     
     init(cityName: String, weatherType: String, weatherDetails: String, icon: String, currentTemp: Int) {
         self.cityName = cityName

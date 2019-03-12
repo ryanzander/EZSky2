@@ -63,4 +63,82 @@ class NetworkService: NSObject {
     }
     
     
+    func getForecast(completion: @escaping ([Forecast]?, Error?) -> ()) {
+        
+        guard let url = URL(string: FORECAST_URL) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            // handle error
+            if let error = error {
+                completion(nil, error)
+                print("Failed to get forecast: ", error)
+                return
+            }
+            // check response
+            guard let data = data else { return }
+            
+            // parse the result as JSON
+            do {
+                guard let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                    print("error trying to convert data to JSON")
+                    return
+                }
+                
+                if let list = dic["list"] as? [[String: AnyObject]] {
+                    // api gives an array of forecast dictionaries
+                    var forecasts = [Forecast]()
+                    
+                    for dic in list {
+                        
+                        var day = ""
+                        var weatherType = ""
+                        var icon = ""
+                        var maxTemp = 0.0
+                        var minTemp = 0.0
+                        
+                        if let dt = dic["dt"] as? Double {
+                            let date = Date(timeIntervalSince1970: dt)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateStyle = .short
+                            dateFormatter.timeStyle = .none
+                            day = date.dayOfWeek() ?? ""
+                        }
+                        
+                        if let weather = dic["weather"] as? [[String: AnyObject]] {
+                            
+                            if let details = weather[0]["description"] as? String {
+                                weatherType = details.capitalizingFirstLetter()
+                            }
+                            
+                            if let iconName = weather[0]["icon"] as? String {
+                                icon = iconName
+                            }
+                        }
+                        
+                        if let temp = dic["temp"] as? [String: AnyObject] {
+                            // temp data is in kelvins, so we subtract to get degrees Celsius
+                            if let min = temp["min"] as? Double {
+                                minTemp = round(min - 273.15)
+                            }
+                            
+                            if let max = temp["max"] as? Double {
+                                maxTemp = round(max - 273.15)
+                            }
+                        }
+                        
+                        let forecast = Forecast.init(day: day, weatherType: weatherType, icon: icon, maxTemp: maxTemp, minTemp: minTemp)
+                        forecasts.append(forecast)
+                        
+                    }
+                    completion(forecasts, error)
+                    return
+                }
+                
+            } catch {
+                print("error trying to convert data to JSON")
+                return
+            }
+        }.resume()
+    }
+    
 }

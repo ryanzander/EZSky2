@@ -22,7 +22,7 @@ class WeatherView: UIView {
             DispatchQueue.main.async {
                 self.dateLbl.text = self.weatherVM.date
                 self.cityLbl.text = self.weatherVM.cityName
-                self.tempLbl.text = self.weatherVM.currentTemp + "°"
+                self.tempLbl.text = self.weatherVM.currentTemp
                 self.detailsLbl.text = self.weatherVM.weatherDetails
                 self.weatherIconIV.image = UIImage(named: self.weatherVM.icon)
             }
