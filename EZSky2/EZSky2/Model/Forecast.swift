@@ -13,10 +13,10 @@ struct Forecast {
     let day: String
     let weatherType: String
     let icon: String
-    let maxTemp: Double
-    let minTemp: Double
+    let maxTemp: Int
+    let minTemp: Int
     
-    init(day: String, weatherType: String, icon: String, maxTemp: Double, minTemp: Double) {
+    init(day: String, weatherType: String, icon: String, maxTemp: Int, minTemp: Int) {
         
         self.day = day
         self.weatherType = weatherType

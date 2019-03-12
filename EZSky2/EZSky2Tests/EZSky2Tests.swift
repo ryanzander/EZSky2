@@ -13,13 +13,13 @@ class EZSky2Tests: XCTestCase {
     
     func testStringCapitalizing() {
         
-        let string = "it is clear"
-        XCTAssertEqual(string.capitalizingFirstLetter(), "It is clear")
+        let string = "sky is clear"
+        XCTAssertEqual(string.capitalizingFirstLetter(), "Sky is clear")
     }
 
     func testWeatherVM() {
       
-        // init mock WeatherViewModels from weather models
+        // init WeatherViewModels from mock weather models
         let weather1 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "03d", currentTemp: 10)
         let weather2 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "01d", currentTemp: 10)
         let weather3 = Weather(cityName: "City Name", weatherType: "Type", weatherDetails: "Details", icon: "11d", currentTemp: 10)
@@ -52,5 +52,18 @@ class EZSky2Tests: XCTestCase {
         XCTAssertEqual(weatherVM7.icon, "Partially Cloudy")
     }
 
+    func testForecastVM() {
+    
+        // init forecastViewModel from mock forecast model
+        let forecast1 = Forecast(day: "Monday", weatherType: "Sky is clear", icon: "01d", maxTemp: 32, minTemp: 18)
+       
+        let forecastVM1 = ForecastVM.init(forecast: forecast1)
+        
+        XCTAssertEqual(forecastVM1.day, "Monday")
+        XCTAssertEqual(forecastVM1.weatherType, "Sky is clear")
+        XCTAssertEqual(forecastVM1.icon, "Sunny")
+        XCTAssertEqual(forecastVM1.maxTemp, "32°")
+        XCTAssertEqual(forecastVM1.minTemp, "18°")
+    }
 
 }

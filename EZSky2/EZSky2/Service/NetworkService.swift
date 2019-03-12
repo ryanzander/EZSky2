@@ -93,8 +93,8 @@ class NetworkService: NSObject {
                         var day = ""
                         var weatherType = ""
                         var icon = ""
-                        var maxTemp = 0.0
-                        var minTemp = 0.0
+                        var maxTemp = 0
+                        var minTemp = 0
                         
                         if let dt = dic["dt"] as? Double {
                             let date = Date(timeIntervalSince1970: dt)
@@ -118,11 +118,11 @@ class NetworkService: NSObject {
                         if let temp = dic["temp"] as? [String: AnyObject] {
                             // temp data is in kelvins, so we subtract to get degrees Celsius
                             if let min = temp["min"] as? Double {
-                                minTemp = round(min - 273.15)
+                                minTemp = Int(round(min - 273.15))
                             }
                             
                             if let max = temp["max"] as? Double {
-                                maxTemp = round(max - 273.15)
+                                maxTemp = Int(round(max - 273.15))
                             }
                         }
                         
